@@ -1,0 +1,280 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//リセット
+@import "reset";
+
+//インクルード
+@import "mixins";
+
+/*-------------------------------------------------------
+
+header
+
+----------------------------------------------------------*/
+
+.header{
+    width: 100%;
+    @include gradient(#00402b, #00714d,horizontal);
+    padding: 20px 0;
+    @include breakPoint(sp){
+        padding: 20px 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    &__inner{
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        max-width: 980px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    &__logo{
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+        text-indent: 0.1em;
+        font-weight: 100;
+        font-family: 'Century',serif;
+        a{
+            color: #fff;
+        }
+        @include breakPoint(sp){
+            font-size: 2rem;
+        }
+    }
+}
+.g-menu{
+    display: flex;
+    &__item{
+        &-link{
+            border: 1px solid #fff ;
+            padding: 10px 25px;
+            font-size: 1.4rem;
+            color: #fff;
+            @include breakPoint(sp){
+            padding: 10px 15px;
+            }
+            &:hover{
+                background: #fff;
+                color: $color-base;
+            }
+        }
+        &:nth-child(n + 2){
+            margin-left: 20px;
+            @include breakPoint(sp){
+                margin-left: 10px;
+            }
+        }
+    }
+    
+}
+
+/*-------------------------------------------------------
+
+Login/Register
+
+----------------------------------------------------------*/
+.signinPage{
+    max-width: 600px;
+    margin: 10vh auto 0;
+    padding: 50px 4%;
+    background: #fff;
+    box-shadow: 0 12px 17px 0 rgba(86, 118, 94, 0.1), 0 0 30px 0 rgba(108, 115, 111, 0.06);
+    &__ttlBox{
+        text-align: center;
+        &-ttl{
+            font-size:3rem ;
+        }
+        &-acountLink a{
+            color:#3490dc ;
+        }
+    }
+    &__ttl{
+        margin: 0;
+        text-align: center;
+    }
+}
+.signinForm{
+    max-width: 500px;
+    margin: 30px auto;
+    &__group{
+        &:nth-child(n + 2){
+            margin-bottom: 20px;
+        }
+        &-ttl{
+            margin-bottom: 5px;
+        }
+        &-content{
+            input{
+                width: 100%;
+                font-size: 1.6rem;
+                background: #fff;
+                border-radius: 0.25rem;
+                border: 1px solid #ced4da;
+                line-height: 1.6;
+                padding: 5px 10px;
+            }
+        }
+    }
+    &__btn{
+        margin: 40px auto 0;
+        max-width: 200px;
+        input,button{
+            background: #3490dc;
+            border: 1px solid #3490dc;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 90px;
+            transition: opacity 0.5s;
+            transition: .1s;
+            &:hover{
+                color: #3490dc;
+                background: #fff;
+            }
+        }
+    } 
+}
+
+/*-------------------------------------------------------
+
+コンテンツ
+
+----------------------------------------------------------*/
+.pageBlock{
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 12px 17px 0 rgba(86, 118, 94, 0.1), 0 0 30px 0 rgba(108, 115, 111, 0.06);
+    &__ttl{
+        background:#eee;
+        padding: 15px;
+    }
+    &__addBtn{
+        padding: 15px;
+        &:hover a{
+            color: #3490dc;
+            text-decoration: none;
+        }
+        a{
+            display: block;
+            border: 1px solid #ddd;
+            line-height: 40px;
+            text-align: center;
+            font-size: 1.4rem;
+
+        }
+    }
+    &__content{
+        padding: 20px 15px;
+    }
+    &__item{
+        display: block;
+        padding: 10px 15px;
+        border-top: 1px solid #ddd;
+        &.active{
+            @include gradient(#00402b, #00714d,horizontal);
+            color: #fff;
+        }
+    }
+    &__table{
+        width: 100%;
+        @include breakPoint(sp){
+            width: 500px;
+        }
+        tr{
+            border-top:1px solid #eee;
+        }
+        td,th{
+            padding: 15px;
+            &:nth-child(n + 2){
+                white-space: nowrap;
+            }
+        }
+        th{
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        td:last-child{
+            display: flex;
+            justify-content: flex-end;
+            a{
+                background: #3490dc;
+                display: inline-block;
+                text-align: center;
+                width: 50px;
+                color: #fff;
+                font-size: 1.4rem;
+                font-weight: bold;
+                padding: 3px 0;
+                border-radius: 3px;
+                white-space: nowrap;
+            }
+        }
+
+        &-label{
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 3px 0;
+            background: #666;
+            border-radius: 3px;
+            white-space: nowrap;
+            &--danger{
+                background: #dd394b;
+            }
+            &--info{
+                background: #13b491;
+            }
+        }
+    }
+    &-form{
+        margin-bottom: 20px;
+        &__ttl{
+            margin-bottom: 5px;
+        }
+        &__content{
+            input,select{
+                width: 100%;
+                font-size: 1.6rem;
+                background: #fff;
+                border-radius: 0.25rem;
+                border: 1px solid #ced4da;
+                line-height: 1.6;
+                padding: 5px 10px;
+            }
+            &-error{
+                margin-top: 5px;
+                font-size: 1.4rem;
+                color: red;
+            }
+        }
+        &__btn{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                border-radius: 3px;
+                background: #1fa5d2;
+                color: #fff;
+                padding:5px 10px;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+.container{
+    margin: 80px auto;
+    max-width: 980px;
+}
